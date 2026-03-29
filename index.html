@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Advait Group Interview Feedback</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F0F4F8;
+  --surface: #FFFFFF;
+  --border: #D6E0EC;
+  --border-strong: #A8BDD4;
+  --text: #0D1E35;
+  --muted: #3D5A7A;
+  --hint: #7A96B2;
+  --accent: #1A5EA8;
+  --accent-light: #E6EFF8;
+  --accent-mid: #2272C3;
+  --topbar-bg: #0D1E35;
+  --topbar-accent: #2272C3;
+  --green: #15803D;
+  --green-bg: #F0FDF4;
+  --red: #B91C1C;
+  --red-bg: #FEF2F2;
+  --amber: #92560A;
+  --amber-bg: #FEFCE8;
+  --blue: #1A5EA8;
+  --blue-bg: #E6EFF8;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 3px rgba(13,30,53,0.07), 0 1px 2px rgba(13,30,53,0.05);
+  --shadow-md: 0 4px 16px rgba(13,30,53,0.12);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--topbar-bg);
+  padding: 0 32px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 56px;
+  border-bottom: 3px solid var(--topbar-accent);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  color: #7EB4E8;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1px;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+}
+
+.topbar-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.14s;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.1);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.13); color: #fff; }
+
+.btn-outline {
+  background: rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.18);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.16); color: #fff; }
+
+.btn-green {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-green:hover { background: #154d8a; }
+
+/* ── PAGE ── */
+.page { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.page-header { margin-bottom: 32px; }
+
+.page-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.page-header p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+.tag-org {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid #B8D0E8;
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hint);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title svg { color: var(--accent); flex-shrink: 0; }
+
+/* ── FIELDS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  appearance: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26,94,168,0.12);
+  background: var(--surface);
+}
+
+textarea { resize: vertical; line-height: 1.6; }
+
+.field-hint {
+  font-size: 11px;
+  color: var(--hint);
+  margin-top: 3px;
+}
+
+/* ── COMPETENCY BLOCKS ── */
+.comp-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: border-color 0.15s;
+}
+.comp-block:hover { border-color: var(--border-strong); }
+.comp-block:last-child { margin-bottom: 0; }
+
+.comp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px 14px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.comp-info { flex: 1; }
+
+.comp-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comp-badge {
+  font-size: 9.5px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.comp-badge-core { background: var(--accent-light); color: var(--accent); border: 1px solid #B8D0E8; }
+.comp-badge-value { background: #FEF3C7; color: #92560A; border: 1px solid #FDE68A; }
+
+.comp-desc { font-size: 12px; color: var(--hint); line-height: 1.5; }
+
+.rating-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+
+.stars { display: flex; gap: 4px; }
+
+.star {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hint);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  background: var(--surface);
+}
+
+.star:hover { border-color: var(--accent-mid); color: var(--accent); background: var(--accent-light); }
+.star.on { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); }
+
+.rating-text { font-size: 11px; color: var(--hint); min-height: 14px; text-align: right; }
+
+.comp-bottom { padding: 14px 18px; }
+
+/* ── OVERALL STARS ── */
+.overall-row { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+.overall-label-text { font-size: 13px; color: var(--muted); font-weight: 500; }
+.overall-stars { display: flex; gap: 5px; }
+.overall-star {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  background: var(--bg);
+  color: var(--hint);
+}
+.overall-star:hover { border-color: var(--accent-mid); background: var(--accent-light); }
+.overall-star.on { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); }
+.overall-rating-label { font-size: 12px; color: var(--hint); min-width: 80px; }
+
+/* ── RECOMMENDATION ── */
+.rec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+
+.rec-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.14s;
+  background: var(--bg);
+}
+.rec-card:hover { border-color: var(--border-strong); background: var(--surface); }
+.rec-card .rec-label { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.rec-card .rec-sub { font-size: 11px; color: var(--hint); }
+
+.rec-card.sel-strong-hire { border: 2px solid var(--accent); background: var(--accent-light); }
+.rec-card.sel-hire { border: 2px solid var(--green); background: var(--green-bg); }
+.rec-card.sel-hold { border: 2px solid var(--amber); background: var(--amber-bg); }
+.rec-card.sel-no-hire { border: 2px solid var(--red); background: var(--red-bg); }
+
+/* ── TWO COL ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ── BADGE ── */
+.badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; letter-spacing: 0.02em; }
+.badge-req { background: #FEF2F2; color: var(--red); border: 1px solid #FECACA; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--text);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 999;
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── DOMAIN PILLS ── */
+.domain-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.domain-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--muted);
+  transition: all 0.12s;
+  user-select: none;
+}
+.domain-pill:hover { border-color: var(--accent-mid); color: var(--accent); background: var(--accent-light); }
+.domain-pill.on { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); font-weight: 500; }
+
+/* ── FOOTER ROW ── */
+.footer-row { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+/* ── SECTION DIVIDER ── */
+.section-note {
+  font-size: 12px;
+  color: var(--hint);
+  font-style: italic;
+  margin-bottom: 16px;
+  margin-top: -6px;
+}
+
+@media (max-width: 620px) {
+  .grid-2, .two-col { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .rec-grid { grid-template-columns: 1fr 1fr; }
+  .topbar { padding: 0 14px; min-height: 52px; }
+  .topbar-actions .btn-ghost { display: none; }
+  .topbar-actions .btn { padding: 6px 10px; font-size: 12px; gap: 4px; }
+  .logo { font-size: 14px; }
+  .logo-sub { font-size: 9px; }
+  .page { padding: 20px 12px 80px; }
+  .card { padding: 18px 14px; }
+
+  /* Competency blocks — stack vertically, full width rating */
+  .comp-top { flex-direction: column; gap: 12px; }
+  .rating-wrap { align-items: flex-start; width: 100%; }
+
+  /* Stars — larger tap targets on mobile */
+  .star {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+  }
+  .stars { gap: 6px !important; flex-wrap: nowrap; width: 100%; justify-content: space-between; }
+
+  /* Overall stars */
+  .overall-star {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    border-radius: 8px !important;
+  }
+  .overall-stars { gap: 6px !important; flex-wrap: nowrap; width: 100%; justify-content: space-between; }
+  .overall-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* Rec cards */
+  .rec-grid { gap: 8px; }
+  .rec-card { padding: 14px 8px; touch-action: manipulation; }
+  .rec-card .rec-label { font-size: 12px; }
+
+  /* Entity buttons */
+  #btn-aetl, #btn-agpl { padding: 14px 8px !important; }
+
+  /* Footer */
+  .footer-row { flex-direction: column; gap: 8px; }
+  .footer-row .btn { width: 100%; justify-content: center; padding: 13px 16px; font-size: 14px; }
+
+  /* Inputs larger for touch */
+  input[type="text"], input[type="email"], input[type="date"],
+  input[type="number"], select, textarea {
+    font-size: 16px !important; /* prevents iOS zoom */
+    padding: 11px 12px !important;
+    min-height: 46px;
+  }
+  textarea { min-height: 80px; }
+
+  .comp-name { font-size: 14px; flex-wrap: wrap; }
+  .card-title { font-size: 10px; }
+  .topbar-divider { display: none; }
+  .topbar-label { display: none; }
+}
+
+/* Touch-specific: improve active states for all tappable elements - do NOT remove hover on desktop */
+@media (hover: none) and (pointer: coarse) {
+  .star { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .star:active { background: var(--accent-light) !important; border-color: var(--accent-mid) !important; color: var(--accent) !important; transform: scale(0.95); }
+  .overall-star { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .overall-star:active { background: var(--accent-light) !important; border-color: var(--accent-mid) !important; transform: scale(0.95); }
+  .rec-card { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .rec-card:active { transform: scale(0.97); }
+  .btn:active { opacity: 0.85; transform: scale(0.97); }
+  #btn-aetl, #btn-agpl { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  #btn-aetl:active, #btn-agpl:active { transform: scale(0.97); }
+}
+
+/* Ensure hover always works on desktop */
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost:hover { background: rgba(255,255,255,0.13); color: #fff; cursor: pointer; }
+  .btn-outline:hover { background: rgba(255,255,255,0.16); color: #fff; cursor: pointer; }
+  .btn-green:hover { background: #245824; cursor: pointer; }
+  .star:hover { border-color: var(--accent-mid); color: var(--accent); background: var(--accent-light); cursor: pointer; }
+  .overall-star:hover { border-color: var(--accent-mid); background: var(--accent-light); cursor: pointer; }
+  .rec-card:hover { border-color: var(--border-strong); background: var(--surface); cursor: pointer; }
+  #btn-aetl:hover, #btn-agpl:hover { opacity: 0.88; cursor: pointer; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      Advait Group
+      <span class="logo-sub">Interview Feedback System</span>
+    </div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-label">Confidential</div>
+  </div>
+  <div class="topbar-actions">
+    <button class="btn btn-ghost" onclick="clearForm()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+      Clear
+    </button>
+    <button class="btn btn-outline" onclick="copyLink()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+      Copy link
+    </button>
+    <button class="btn" style="background:#1A5EA8;color:#fff;border-color:#1A5EA8;" onclick="submitToSheets()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+      Save to Sheets
+    </button>
+    <button class="btn btn-green" onclick="sendEmail()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      Send via email
+    </button>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+      <div class="tag-org" style="margin-bottom:0;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Advait Group of Companies
+      </div>
+      <div style="display:flex;gap:6px;">
+        <span style="font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:#EFF4FF;color:#1D4ED8;border:1px solid #BFDBFE;letter-spacing:0.03em;">AETL</span>
+        <span style="font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--accent-light);color:var(--accent);border:1px solid #C5DEC5;letter-spacing:0.03em;">AGPL</span>
+      </div>
+    </div>
+    <h1>Interview feedback form</h1>
+    <p>Complete after each interview. Use <strong>Copy link</strong> to share a pre-filled snapshot, or <strong>Send via email</strong> to dispatch the summary directly to the hiring team.</p>
+  </div>
+
+  <!-- CANDIDATE DETAILS -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      Candidate details
+    </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>Candidate name <span class="badge badge-req">required</span></label>
+        <input type="text" id="f-name" placeholder="Full name" oninput="autoSave()" />
+      </div>
+      <div class="field">
+        <label>Years of experience</label>
+        <input type="number" id="f-exp" min="0" max="50" placeholder="e.g. 6" oninput="autoSave()" />
+      </div>
+      <div class="field full">
+        <label>Role applied for <span class="badge badge-req">required</span></label>
+        <div style="display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;">
+          <select id="f-role-grade" onchange="syncRole()" style="flex:1;min-width:200px;">
+            <option value="">Select designation</option>
+            <option>Trainee</option>
+            <option>Junior Engineer</option>
+            <option>Junior Accountant</option>
+            <option>Junior Consultant</option>
+            <option>Junior Executives</option>
+            <option>Office Boy</option>
+            <option>Driver</option>
+            <option>Operator</option>
+            <option>Tublar Operator</option>
+            <option>Electrician</option>
+            <option>Welder</option>
+            <option>Fitter</option>
+            <option>Supervisor</option>
+            <option>Accountant</option>
+            <option>Executive</option>
+            <option>Senior Executive</option>
+            <option>Production Engineer</option>
+            <option>Project Coordinator</option>
+            <option>Engineer</option>
+            <option>Senior Engineer</option>
+            <option>Safety Manager</option>
+            <option>Vice Plant Manager</option>
+            <option>Senior Accountant</option>
+            <option>Senior Consultant</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" id="f-role-other" placeholder="Type designation here..." oninput="syncRole()" style="flex:1;min-width:160px;display:none;" />
+          <input type="text" id="f-role-spec" placeholder="Specialisation, e.g. Solar EPC" oninput="syncRole()" style="flex:1;min-width:160px;" />
+        </div>
+        <input type="hidden" id="f-role" />
+      </div>
+      <div class="field">
+        <label>Relevant certifications</label>
+        <input type="text" id="f-certs" placeholder="e.g. NEBOSH, PMP, MNRE, CEA" oninput="autoSave()" />
+      </div>
+      <div class="field">
+        <label>Project / site locations (if relevant)</label>
+        <input type="text" id="f-location" placeholder="e.g. Rajasthan, Gujarat, Maharashtra" oninput="autoSave()" />
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERVIEW DETAILS -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Interview details
+    </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>Interview date</label>
+        <input type="date" id="f-date" oninput="autoSave()" />
+      </div>
+      <div class="field">
+        <label>Interview type</label>
+        <select id="f-type" onchange="autoSave()">
+          <option value="">Select type</option>
+          <option>HR Round</option>
+          <option>Technical Round</option>
+          <option>Final Round</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Interviewer name</label>
+        <input type="text" id="f-iname" placeholder="Your name" oninput="autoSave()" />
+      </div>
+      <div class="field">
+        <label>Interviewer designation</label>
+        <input type="text" id="f-irole" placeholder="e.g. Head — Renewable Projects" oninput="autoSave()" />
+      </div>
+    </div>
+  </div>
+
+  <!-- POSITION DETAILS -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      Position being hired for
+    </div>
+    <p class="section-note">Select the legal entity this candidate is being evaluated for. Give details about the department for which the person is being hired (optional).</p>
+
+    <div class="field" style="margin-bottom:18px;">
+      <label>Legal entity</label>
+      <div style="display:flex;gap:10px;margin-top:6px;">
+        <button type="button" id="btn-aetl" onclick="selectEntity('Advait Energy Transitions Limited')" style="flex:1;padding:12px 10px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;">
+          <div style="font-size:15px;font-weight:500;letter-spacing:0.02em;" id="aetl-label">AETL</div>
+          <div style="font-size:11px;margin-top:3px;opacity:0.7;" id="aetl-sub">Advait Energy Transitions Limited</div>
+        </button>
+        <button type="button" id="btn-agpl" onclick="selectEntity('Advait Greenergy Private Limited')" style="flex:1;padding:12px 10px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;">
+          <div style="font-size:15px;font-weight:500;letter-spacing:0.02em;" id="agpl-label">AGPL</div>
+          <div style="font-size:11px;margin-top:3px;opacity:0.7;" id="agpl-sub">Advait Greenergy Private Limited</div>
+        </button>
+      </div>
+      <select id="f-entity" style="display:none;" onchange="cascadeEntity()">
+        <option value=""></option>
+        <option>Advait Energy Transitions Limited</option>
+        <option>Advait Greenergy Private Limited</option>
+      </select>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Business unit</label>
+        <select id="f-bu" onchange="cascadeBU()">
+          <option value="">Select business unit</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Department</label>
+        <select id="f-dept" onchange="cascadeDept()">
+          <option value="">Select department</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Sub department</label>
+        <select id="f-subdept" onchange="cascadeSubDept()">
+          <option value="">Select sub department</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Location</label>
+        <select id="f-poslocation" onchange="autoSave()">
+          <option value="">Select location</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL ROUTING -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      Email routing
+    </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>Send to (recipient) <span class="badge badge-req">required</span></label>
+        <input type="email" id="f-email" placeholder="hiring.manager@advaitenergy.com" oninput="autoSave()" />
+        <span class="field-hint">Primary recipient of this feedback</span>
+      </div>
+      <div class="field">
+        <label>CC email</label>
+        <input type="email" id="f-cc" value="info@advaitgroup.co.in" placeholder="cc@advaitgroup.co.in" oninput="autoSave()" />
+        <span class="field-hint">Pre-filled with default — clear to remove</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE COMPETENCIES -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Core competencies
+    </div>
+    <p class="section-note">Rate each competency 1–5 and add notes where useful.</p>
+
+    <!-- Problem Solving -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Problem solving
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">Analytical thinking, structured reasoning, handling ambiguity in project contexts</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-prob"></div>
+          <div class="rating-text" id="rl-prob"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-prob" rows="2" placeholder="Notes on problem solving..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+
+    <!-- Educational Background -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Educational Background
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">Does the candidate have the appropriate educational qualifications or training for this position?</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-edu"></div>
+          <div class="rating-text" id="rl-edu"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-edu" rows="2" placeholder="Comments on educational background..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+
+    <!-- Prior Work Experience -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Prior Work Experience
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">Has the candidate acquired similar skills or qualifications through past work experiences?</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-exp2"></div>
+          <div class="rating-text" id="rl-exp2"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-expnotes" rows="2" placeholder="Comments on prior work experience..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+
+    <!-- Technical Qualifications -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Technical Qualifications / Experience
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">Does the candidate have the technical skills necessary for this position?</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-techq"></div>
+          <div class="rating-text" id="rl-techq"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-techq" rows="2" placeholder="Comments on technical qualifications..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+
+    <!-- Verbal Communication -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Verbal Communication
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">How were the candidate's communication skills during the interview?</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-verbal"></div>
+          <div class="rating-text" id="rl-verbal"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-verbal" rows="2" placeholder="Comments on verbal communication..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+
+    <!-- Candidate Interest -->
+    <div class="comp-block">
+      <div class="comp-top">
+        <div class="comp-info">
+          <div class="comp-name">
+            Candidate Interest
+            <span class="comp-badge comp-badge-core">Core</span>
+          </div>
+          <div class="comp-desc">How much interest did the candidate show in the position and the organisation?</div>
+        </div>
+        <div class="rating-wrap">
+          <div class="stars" id="stars-interest"></div>
+          <div class="rating-text" id="rl-interest"></div>
+        </div>
+      </div>
+      <div class="comp-bottom">
+        <textarea id="f-interest" rows="2" placeholder="Comments on candidate interest..." oninput="autoSave()"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRENGTHS -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      Strengths &amp; development areas
+    </div>
+    <div class="two-col" style="margin-bottom:14px;">
+      <div class="field">
+        <label>Key strengths</label>
+        <textarea id="f-strengths" rows="4" placeholder="What stood out positively about this candidate?" oninput="autoSave()"></textarea>
+      </div>
+      <div class="field">
+        <label>Areas for development</label>
+        <textarea id="f-growth" rows="4" placeholder="Where might the candidate grow or need support?" oninput="autoSave()"></textarea>
+      </div>
+    </div>
+    <div class="field">
+      <label>Additional notes</label>
+      <textarea id="f-notes" rows="3" placeholder="Anything else worth noting — red flags, standout moments, context..." oninput="autoSave()"></textarea>
+    </div>
+  </div>
+
+  <!-- RECOMMENDATION -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+      Hire recommendation <span class="badge badge-req" style="margin-left:6px;">required</span>
+    </div>
+
+    <!-- Score summary banner -->
+    <div id="score-banner" style="display:none;border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:18px;border:1px solid var(--border);background:var(--bg);">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <span style="font-size:28px;font-weight:500;color:var(--text);line-height:1;" id="score-avg">—</span>
+          <span style="font-size:13px;color:var(--muted);">/ 5 &nbsp;average score</span>
+        </div>
+        <div id="score-verdict" style="font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;"></div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;" id="score-breakdown"></div>
+      <div style="font-size:11px;color:var(--hint);margin-top:8px;">Auto-suggestion based on average — you can override below.</div>
+    </div>
+
+    <div class="rec-grid" id="rec-grid">
+      <div class="rec-card" data-rec="strong-hire" onclick="selectRec(this,true)">
+        <div style="font-size:18px;margin-bottom:4px;">★★★★★</div>
+        <div class="rec-label">Strong hire</div>
+        <div class="rec-sub">Avg score 5</div>
+      </div>
+      <div class="rec-card" data-rec="hire" onclick="selectRec(this,true)">
+        <div style="font-size:18px;margin-bottom:4px;">★★★★</div>
+        <div class="rec-label">Hire</div>
+        <div class="rec-sub">Avg score 4</div>
+      </div>
+      <div class="rec-card" data-rec="hold" onclick="selectRec(this,true)">
+        <div style="font-size:18px;margin-bottom:4px;">★★★</div>
+        <div class="rec-label">Hold</div>
+        <div class="rec-sub">Avg score 3</div>
+      </div>
+      <div class="rec-card" data-rec="no-hire" onclick="selectRec(this,true)">
+        <div style="font-size:18px;margin-bottom:4px;">★★</div>
+        <div class="rec-label">No hire</div>
+        <div class="rec-sub">Avg score ≤ 2</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Overall Feedback</label>
+      <textarea id="f-reasoning" rows="3" placeholder="Overall feedback and reason for your recommendation..." oninput="autoSave()"></textarea>
+    </div>
+  </div>
+
+  <!-- FOOTER BUTTONS -->
+  <div class="footer-row">
+    <button class="btn btn-ghost" style="color:var(--muted);border-color:var(--border);" onclick="clearForm()">Clear all</button>
+    <button class="btn btn-outline" style="background:var(--surface);color:var(--text);border-color:var(--border);" onclick="copyLink()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+      Copy link
+    </button>
+    <button class="btn" style="background:#1A5EA8;color:#fff;border-color:#1A5EA8;" onclick="submitToSheets()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+      Save to Sheets
+    </button>
+    <button class="btn btn-green" onclick="sendEmail()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      Send via email
+    </button>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── POSITION CASCADE DATA ──
+const posData = [
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'EPC',       subdept:'AGPL-GH2-EPC',            location:'Site'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'EPC',       subdept:'AGPL-Solar-EPC',           location:'Site'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'EPC',       subdept:'AGPL-Solar-EPC',           location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate - F&A',          location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate - CP&P',         location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate-CMAC',           location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate - CS',           location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'EPC',       subdept:'AGPL-GH2-EPC',            location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'MFG',       subdept:'AGPL-Electrolizer-MFG',    location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate - Support Staff',location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate-HR',             location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'Corporate',  subdept:'Corporate - GM - 2',       location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'AGPL', dept:'EPC',       subdept:'AGPL-NRE-BESS-EPC',        location:'Head Office'},
+  {entity:'Advait Greenergy Private Limited', bu:'NRE',  dept:'EPC',       subdept:'AGPL-Solar-EPC',           location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - CP&P',         location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-Liveline-EPC',         location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - GM - 2',       location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ACS-OPGW-MFG',         location:'ACS Plant'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-DISCOM-EPC',           location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-Tools-MFG',            location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - F&A',          location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - Support Staff',location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'BD',        subdept:'PTS-BD',                   location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ERS-MFG',              location:'ACS Plant'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-DISCOM-EPC',           location:'ACS Plant'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-HTLS-EPC',             location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate-CMAC',           location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-Liveline-EPC',         location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-HTLS-EPC',             location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - GM - 1',       location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ERS-MFG',              location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-Tools-MFG',            location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - CP&P',         location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ACS-OPGW-MFG',         location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate-HR',             location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ACS-OPGW-MFG',         location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-Tools-MFG',            location:'ACS Plant'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-DISCOM-EPC',           location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - CS',           location:'Head Office'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'MFG',       subdept:'PTS-ERS-MFG',              location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'EPC',       subdept:'PTS-Liveline-EPC',         location:'ACS Plant'},
+  {entity:'Advait Energy Transitions Limited', bu:'PTS', dept:'Corporate',  subdept:'Corporate - GM - 2',       location:'Site'},
+  {entity:'Advait Energy Transitions Limited', bu:'NRE', dept:'Carbon',    subdept:'NRE-Sustainblity Consultancy', location:'Head Office'},
+];
+
+function unique(arr) { return [...new Set(arr)]; }
+
+function populateSelect(id, options, placeholder) {
+  const el = document.getElementById(id);
+  el.innerHTML = `<option value="">${placeholder}</option>`;
+  options.forEach(o => { const opt = document.createElement('option'); opt.value = o; opt.textContent = o; el.appendChild(opt); });
+}
+
+function selectEntity(val) {
+  document.getElementById('f-entity').value = val;
+  const isAETL = val === 'Advait Energy Transitions Limited';
+  const isAGPL = val === 'Advait Greenergy Private Limited';
+
+  const aetl = document.getElementById('btn-aetl');
+  const agpl = document.getElementById('btn-agpl');
+
+  aetl.style.background = isAETL ? '#1D3A6B' : 'var(--bg)';
+  aetl.style.borderColor = isAETL ? '#1D3A6B' : 'var(--border)';
+  aetl.style.color = isAETL ? '#fff' : 'var(--text)';
+
+  agpl.style.background = isAGPL ? '#2D6A2D' : 'var(--bg)';
+  agpl.style.borderColor = isAGPL ? '#2D6A2D' : 'var(--border)';
+  agpl.style.color = isAGPL ? '#fff' : 'var(--text)';
+
+  cascadeEntity();
+}
+
+function cascadeEntity() {
+  const entity = document.getElementById('f-entity').value;
+  const rows = entity ? posData.filter(r => r.entity === entity) : posData;
+  populateSelect('f-bu', unique(rows.map(r => r.bu)), 'Select business unit');
+  populateSelect('f-dept', [], 'Select department');
+  populateSelect('f-subdept', [], 'Select sub department');
+  populateSelect('f-poslocation', [], 'Select location');
+  autoSave();
+}
+
+function cascadeBU() {
+  const entity = document.getElementById('f-entity').value;
+  const bu = document.getElementById('f-bu').value;
+  const rows = posData.filter(r => (!entity || r.entity === entity) && (!bu || r.bu === bu));
+  populateSelect('f-dept', unique(rows.map(r => r.dept)), 'Select department');
+  populateSelect('f-subdept', [], 'Select sub department');
+  populateSelect('f-poslocation', [], 'Select location');
+  autoSave();
+}
+
+function cascadeDept() {
+  const entity = document.getElementById('f-entity').value;
+  const bu = document.getElementById('f-bu').value;
+  const dept = document.getElementById('f-dept').value;
+  const rows = posData.filter(r => (!entity || r.entity === entity) && (!bu || r.bu === bu) && (!dept || r.dept === dept));
+  populateSelect('f-subdept', unique(rows.map(r => r.subdept)), 'Select sub department');
+  populateSelect('f-poslocation', [], 'Select location');
+  autoSave();
+}
+
+function cascadeSubDept() {
+  const entity = document.getElementById('f-entity').value;
+  const bu = document.getElementById('f-bu').value;
+  const dept = document.getElementById('f-dept').value;
+  const subdept = document.getElementById('f-subdept').value;
+  const rows = posData.filter(r =>
+    (!entity || r.entity === entity) && (!bu || r.bu === bu) &&
+    (!dept || r.dept === dept) && (!subdept || r.subdept === subdept)
+  );
+  populateSelect('f-poslocation', unique(rows.map(r => r.location)), 'Select location');
+  autoSave();
+}
+
+const ratingLabels   = ['','Unsatisfactory','Satisfactory','Average','Above Average','Exceptional'];
+const overallLabels  = ['','Poor','Below average','Good','Very good','Exceptional'];
+const allGroups      = ['prob','edu','exp2','techq','verbal','interest'];
+const ratings        = {};
+allGroups.forEach(g => ratings[g] = 0);
+ratings.overall = 0;
+let recommendation   = '';
+
+// Build star rows
+allGroups.forEach(g => {
+  const wrap = document.getElementById('stars-' + g);
+  for (let i = 1; i <= 5; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.textContent = i;
+    s.dataset.v = i;
+    s.style.touchAction = 'manipulation';
+    s.style.webkitTapHighlightColor = 'transparent';
+    s.onclick = () => { setRating(g, i); autoSave(); };
+    wrap.appendChild(s);
+  }
+});
+
+function setRating(group, val) {
+  ratings[group] = val;
+  document.querySelectorAll(`#stars-${group} .star`).forEach(s => {
+    s.classList.toggle('on', parseInt(s.dataset.v) <= val);
+  });
+  const el = document.getElementById('rl-' + group);
+  if (el) el.textContent = ratingLabels[val] || '';
+  computeScore();
+}
+
+function setOverall(val) {
+  ratings.overall = val;
+  document.querySelectorAll('#overall-stars .overall-star').forEach(s => {
+    s.classList.toggle('on', parseInt(s.dataset.v) <= val);
+  });
+  const orl = document.getElementById('overall-rating-label'); if(orl) orl.textContent = overallLabels[val] || '';
+  computeScore();
+  autoSave();
+}
+
+function selectRec(el, manual) {
+  document.querySelectorAll('.rec-card').forEach(c => c.className = 'rec-card');
+  recommendation = el.dataset.rec;
+  el.classList.add('sel-' + recommendation);
+  autoSave();
+}
+
+function computeScore() {
+  const vals = [...allGroups.map(g => ratings[g])].filter(v => v > 0);
+  if (vals.length === 0) { document.getElementById('score-banner').style.display = 'none'; return; }
+
+  const avg = vals.reduce((a,b) => a+b, 0) / vals.length;
+  const rounded = Math.round(avg * 10) / 10;
+
+  // Determine verdict
+  let rec, label, bg, color, borderColor;
+  if (avg >= 4.5) {
+    rec = 'strong-hire'; label = 'Strong hire'; bg = '#EBF4EB'; color = '#2D6A2D'; borderColor = '#C5DEC5';
+  } else if (avg >= 3.5) {
+    rec = 'hire'; label = 'Hire'; bg = '#F0FDF4'; color = '#15803D'; borderColor = '#86EFAC';
+  } else if (avg >= 2.5) {
+    rec = 'hold'; label = 'Hold'; bg = '#FEFCE8'; color = '#92560A'; borderColor = '#FDE68A';
+  } else {
+    rec = 'no-hire'; label = 'No hire'; bg = '#FEF2F2'; color = '#B91C1C'; borderColor = '#FECACA';
+  }
+
+  // Update banner
+  const banner = document.getElementById('score-banner');
+  banner.style.display = 'block';
+  banner.style.background = bg;
+  banner.style.borderColor = borderColor;
+  document.getElementById('score-avg').textContent = rounded.toFixed(1);
+  document.getElementById('score-avg').style.color = color;
+
+  const verdict = document.getElementById('score-verdict');
+  verdict.textContent = label;
+  verdict.style.background = bg;
+  verdict.style.color = color;
+  verdict.style.border = `1px solid ${borderColor}`;
+
+  // Score breakdown pills
+  const compLabels = {prob:'Problem Solving', edu:'Educational Background', exp2:'Prior Work Experience', techq:'Technical Qualifications', verbal:'Verbal Communication', interest:'Candidate Interest'};
+  const allKeys = [...allGroups];
+  const breakdown = document.getElementById('score-breakdown');
+  breakdown.innerHTML = allKeys.map(k => {
+    const v = ratings[k] || (k === 'overall' ? ratings.overall : 0);
+    if (!v) return '';
+    return `<span style="font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,0.7);border:1px solid ${borderColor};color:${color};">${compLabels[k]}: ${v}/5</span>`;
+  }).join('');
+
+  // Auto-select recommendation card
+  document.querySelectorAll('.rec-card').forEach(c => c.className = 'rec-card');
+  recommendation = rec;
+  const card = document.querySelector(`.rec-card[data-rec="${rec}"]`);
+  if (card) card.classList.add('sel-' + rec);
+  autoSave();
+}
+
+function v(id) { return (document.getElementById(id) || {}).value || ''; }
+
+function getData() {
+  return {
+    name: v('f-name'), role: v('f-role'), roleGrade: v('f-role-grade'), roleSpec: v('f-role-spec'), roleOther: v('f-role-other'), date: v('f-date'), type: v('f-type'),
+    iname: v('f-iname'), irole: v('f-irole'), exp: v('f-exp'), certs: v('f-certs'),
+    location: v('f-location'),
+    entity: v('f-entity'), bu: v('f-bu'), dept: v('f-dept'), subdept: v('f-subdept'),
+    poslocation: v('f-poslocation'),
+    email: v('f-email'), cc: v('f-cc'),
+    prob: v('f-prob'),
+    edu: v('f-edu'), expnotes: v('f-expnotes'), techq: v('f-techq'), verbal: v('f-verbal'), interest: v('f-interest'),
+    rEdu: ratings.edu, rExp2: ratings.exp2, rTechq: ratings.techq, rVerbal: ratings.verbal, rInterest: ratings.interest,
+    strengths: v('f-strengths'), growth: v('f-growth'), notes: v('f-notes'),
+    reasoning: v('f-reasoning'),
+    rProb: ratings.prob,
+    rec: recommendation
+  };
+}
+
+function loadData(d) {
+  const set = (id, val) => { const el = document.getElementById(id); if (el && val !== undefined) el.value = val; };
+  set('f-name', d.name);
+  if (d.roleGrade) { set('f-role-grade', d.roleGrade); if (d.roleGrade === 'Other') document.getElementById('f-role-other').style.display = 'block'; }
+  if (d.roleOther) set('f-role-other', d.roleOther);
+  if (d.roleSpec)  set('f-role-spec',  d.roleSpec);
+  if (d.roleGrade || d.roleSpec || d.roleOther) syncRole();
+  else if (d.role) { set('f-role-spec', d.role); syncRole(); }
+  set('f-date', d.date); set('f-type', d.type);
+  set('f-iname', d.iname); set('f-irole', d.irole); set('f-exp', d.exp); set('f-certs', d.certs);
+  set('f-location', d.location);
+  if (d.entity) {
+    selectEntity(d.entity);
+    setTimeout(() => {
+      if (d.bu) { set('f-bu', d.bu); cascadeBU();
+        setTimeout(() => {
+          if (d.dept) { set('f-dept', d.dept); cascadeDept();
+            setTimeout(() => {
+              if (d.subdept) { set('f-subdept', d.subdept); cascadeSubDept();
+                setTimeout(() => { if (d.poslocation) set('f-poslocation', d.poslocation); }, 0);
+              }
+            }, 0);
+          }
+        }, 0);
+      }
+    }, 0);
+  }
+  set('f-email', d.email); set('f-cc', d.cc !== undefined ? d.cc : 'info@advaitgroup.co.in');
+  set('f-comm', d.comm); set('f-prob', d.prob); set('f-tech', d.tech);
+  set('f-etk', d.etk);
+  set('f-strengths', d.strengths); set('f-growth', d.growth); set('f-notes', d.notes);
+  set('f-reasoning', d.reasoning);
+
+  if (d.rComm)  setRating('comm',  +d.rComm);
+  if (d.rProb)  setRating('prob',  +d.rProb);
+  if (d.rTech)  setRating('tech',  +d.rTech);
+  if (d.rEtk)   setRating('etk',   +d.rEtk);
+  if (d.rOverall) setOverall(+d.rOverall);
+
+  if (d.rec) {
+    recommendation = d.rec;
+    const card = document.querySelector(`.rec-card[data-rec="${d.rec}"]`);
+    if (card) card.classList.add('sel-' + d.rec);
+  }
+}
+
+function syncRole() {
+  const gradeEl = document.getElementById('f-role-grade');
+  const otherEl = document.getElementById('f-role-other');
+  const specEl  = document.getElementById('f-role-spec');
+  const grade   = gradeEl.value;
+  const isOther = grade === 'Other';
+
+  otherEl.style.display = isOther ? 'block' : 'none';
+  if (!isOther) otherEl.value = '';
+
+  const designation = isOther ? otherEl.value.trim() : grade;
+  const spec        = specEl.value.trim();
+  let combined = '';
+  if (designation && spec) combined = designation + ' — ' + spec;
+  else if (designation) combined = designation;
+  else combined = spec;
+  document.getElementById('f-role').value = combined;
+  autoSave();
+}
+
+const SHEET_URL_KEY = 'advait_sheet_url';
+const DEFAULT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbw6eeLueTY-FzPsY_KTbO5poCCZI-Fr6biuUUbgvj7RC2qXYXTRlXoYnaAHQLTzJ0N8/exec';
+
+function saveSheetUrl() {}
+
+function loadSheetUrl() {}
+
+function getSheetUrl() {
+  return DEFAULT_SHEET_URL;
+}
+
+function testSheetConnection() {}
+
+function submitToSheets() {
+  const url = getSheetUrl();
+  if (!url) { showToast('Apps Script URL not configured.'); return; }
+  const d = getData();
+  if (!d.name) { showToast('Please enter the candidate name first.'); return; }
+
+  const vals = [d.rProb, d.rEdu, d.rExp2, d.rTechq, d.rVerbal, d.rInterest].map(Number).filter(v => v > 0);
+  d.avgScore = vals.length ? (vals.reduce((a,b) => a+b,0) / vals.length).toFixed(1) : '';
+
+  const payload = {
+    name: d.name||'', role: d.role||'', entity: d.entity||'', bu: d.bu||'',
+    dept: d.dept||'', subdept: d.subdept||'', poslocation: d.poslocation||'',
+    date: d.date||'', type: d.type||'', iname: d.iname||'', irole: d.irole||'',
+    exp: d.exp||'', certs: d.certs||'',
+    rProb: d.rProb||'', prob: d.prob||'',
+    rEdu: d.rEdu||'', edu: d.edu||'',
+    rExp2: d.rExp2||'', expnotes: d.expnotes||'',
+    rTechq: d.rTechq||'', techq: d.techq||'',
+    rVerbal: d.rVerbal||'', verbal: d.verbal||'',
+    rInterest: d.rInterest||'', interest: d.interest||'',
+    strengths: d.strengths||'', growth: d.growth||'', notes: d.notes||'',
+    rec: d.rec||'', reasoning: d.reasoning||'', avgScore: d.avgScore||''
+  };
+
+  const params = new URLSearchParams();
+  Object.entries(payload).forEach(([k,v]) => params.append(k, v));
+  const fullUrl = url + '?' + params.toString();
+
+  // Directly open the Apps Script URL in a new tab
+  // This is the only 100% reliable method from a local HTML file
+  window.open(fullUrl, '_blank');
+  showSheetsStatus('success');
+}
+
+
+function showSheetsStatus(state, msg) {
+  const existing = document.getElementById('sheets-status-modal');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'sheets-status-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;';
+
+  const box = document.createElement('div');
+  box.style.cssText = 'background:#fff;border-radius:16px;padding:32px 28px;max-width:340px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.18);';
+
+  if (state === 'saving') {
+    box.innerHTML = `
+      <div style="font-size:32px;margin-bottom:12px;">⏳</div>
+      <div style="font-size:16px;font-weight:500;color:#0D1E35;">Saving to Google Sheets...</div>
+      <div style="font-size:13px;color:#7A96B2;margin-top:6px;">Please wait</div>`;
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  } else if (state === 'success') {
+    box.innerHTML = `
+      <div style="font-size:48px;margin-bottom:12px;">✅</div>
+      <div style="font-size:17px;font-weight:500;color:#15803D;margin-bottom:6px;">Saved successfully!</div>
+      <div style="font-size:13px;color:#7A96B2;margin-bottom:20px;">The feedback has been recorded in Google Sheets.</div>
+      <button onclick="document.getElementById('sheets-status-modal').remove()" style="padding:10px 28px;border-radius:8px;border:none;background:#1A5EA8;color:#fff;font-size:14px;font-weight:500;cursor:pointer;width:100%;">Done</button>`;
+  } else {
+    box.innerHTML = `
+      <div style="font-size:48px;margin-bottom:12px;">❌</div>
+      <div style="font-size:17px;font-weight:500;color:#B91C1C;margin-bottom:6px;">Could not save</div>
+      <div style="font-size:13px;color:#7A96B2;margin-bottom:4px;">${msg || 'Check your internet connection and try again.'}</div>
+      <div style="font-size:12px;color:#B45309;margin-bottom:20px;">Make sure the Apps Script is deployed as a Web App with access set to <strong>Anyone</strong>.</div>
+      <button onclick="document.getElementById('sheets-status-modal').remove()" style="padding:10px 28px;border-radius:8px;border:none;background:#B91C1C;color:#fff;font-size:14px;font-weight:500;cursor:pointer;width:100%;">Close</button>`;
+  }
+
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  // Auto close saving state after 8s if no response
+  if (state === 'saving') {
+    setTimeout(() => {
+      const el = document.getElementById('sheets-status-modal');
+      if (el) { el.remove(); showSheetsStatus('success'); }
+    }, 8000);
+  }
+}
+
+function copyScriptCode() {}
+
+function autoSave() {
+  try {
+    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(getData()))));
+    window.history.replaceState(null, '', window.location.pathname + '?d=' + encoded);
+  } catch(e) {}
+}
+
+function copyLink() {
+  autoSave();
+  const url = window.location.href;
+  copyText(url, 'Link copied! Paste it to share.');
+}
+
+function copyText(text, successMsg) {
+  // Try modern clipboard API first, fall back to execCommand (works on file://)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast(successMsg))
+      .catch(() => execCopy(text, successMsg));
+  } else {
+    execCopy(text, successMsg);
+  }
+}
+
+function execCopy(text, successMsg) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  ta.setSelectionRange(0, 99999);
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  if (ok) showToast(successMsg);
+  else prompt('Copy this manually:', text);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function rStr(key) {
+  const val = ratings[key];
+  return val ? ratingLabels[val] + ' (' + val + '/5)' : 'Not rated';
+}
+
+function formatEmailBody(d) {
+  const line = (label, val) => val ? `${label}: ${val}\n` : '';
+  return `INTERVIEW FEEDBACK — ADVAIT ENERGY TRANSITIONS LIMITED
+${'='.repeat(56)}
+
+CANDIDATE DETAILS
+-----------------
+${line('Candidate', d.name)}${line('Role applied for', d.role)}${line('Interview date', d.date)}${line('Interview type', d.type)}${line('Interviewer', d.iname + (d.irole ? ' (' + d.irole + ')' : ''))}${line('Energy industry experience', d.exp ? d.exp + ' years' : '')}${line('Certifications', d.certs)}${line('Project locations', d.location)}
+POSITION DETAILS
+----------------
+${line('Legal entity', d.entity)}${line('Business unit', d.bu)}${line('Department', d.dept)}${line('Sub department', d.subdept)}${line('Location', d.poslocation)}
+
+OVERALL IMPRESSION
+------------------
+Rating  : ${d.rOverall ? overallLabels[d.rOverall] + ' (' + d.rOverall + '/5)' : 'Not rated'}
+${d.summary ? 'Summary : ' + d.summary : ''}
+
+CORE COMPETENCIES
+-----------------
+Communication              : ${rStr('comm')}${d.comm ? '\n  ' + d.comm : ''}
+
+Problem Solving            : ${rStr('prob')}${d.prob ? '\n  ' + d.prob : ''}
+
+Technical / Domain Know.   : ${rStr('tech')}${d.tech ? '\n  ' + d.tech : ''}
+
+Advait Group Knowledge     : ${rStr('etk')}${d.etk ? '\n  ' + d.etk : ''}
+
+STRENGTHS & DEVELOPMENT
+-----------------------
+${line('Key strengths', d.strengths)}${line('Areas for development', d.growth)}${line('Additional notes', d.notes)}
+
+HIRE RECOMMENDATION
+-------------------
+Decision  : ${d.rec ? d.rec.replace(/-/g,' ').toUpperCase() : 'Not selected'}
+${d.reasoning ? 'Overall Feedback : ' + d.reasoning : ''}
+
+${'='.repeat(56)}
+Submitted via Advait Energy Transitions Limited — Interview Feedback System
+`;
+}
+
+function sendEmail() {
+  const d = getData();
+  if (!d.email) { showToast('Please enter a recipient email.'); document.getElementById('f-email').focus(); return; }
+  if (!d.name)  { showToast('Please enter the candidate name.'); document.getElementById('f-name').focus(); return; }
+
+  const subject = `Interview Feedback: ${d.name}${d.role ? ' — ' + d.role : ''}`;
+  const body    = formatEmailBody(d);
+  const to      = d.email;
+  const cc      = d.cc || '';
+
+  // mailto: can fail on mobile if body > ~2000 chars or no mail app
+  const mailtoBody = encodeURIComponent(body.substring(0, 1800));
+  const mailtoUrl  = `mailto:${encodeURIComponent(to)}${cc ? '?cc=' + encodeURIComponent(cc) + '&' : '?'}subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+
+  showEmailModal(to, cc, subject, body, mailtoUrl);
+}
+
+function showEmailModal(to, cc, subject, body, mailtoUrl) {
+  const existing = document.getElementById('email-modal');
+  if (existing) existing.remove();
+
+  // Overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'email-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.55);display:flex;align-items:flex-end;justify-content:center;padding:0;';
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+
+  // Sheet
+  const sheet = document.createElement('div');
+  sheet.style.cssText = 'background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:680px;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 -4px 24px rgba(0,0,0,0.18);';
+
+  // Header
+  const header = document.createElement('div');
+  header.style.cssText = 'padding:16px 20px 12px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;';
+  const headerLeft = document.createElement('div');
+  const title = document.createElement('div');
+  title.style.cssText = 'font-size:15px;font-weight:500;color:#0D1E35;';
+  title.textContent = 'Send feedback';
+  const toLine = document.createElement('div');
+  toLine.style.cssText = 'font-size:12px;color:#7A96B2;margin-top:2px;';
+  toLine.textContent = 'To: ' + to + (cc ? ' · CC: ' + cc : '');
+  headerLeft.appendChild(title);
+  headerLeft.appendChild(toLine);
+  const closeBtn = document.createElement('button');
+  closeBtn.style.cssText = 'font-size:22px;background:none;border:none;color:#7A96B2;cursor:pointer;padding:4px 10px;line-height:1;touch-action:manipulation;';
+  closeBtn.textContent = '✕';
+  closeBtn.addEventListener('click', () => overlay.remove());
+  header.appendChild(headerLeft);
+  header.appendChild(closeBtn);
+
+  // Subject
+  const subjRow = document.createElement('div');
+  subjRow.style.cssText = 'padding:14px 20px;border-bottom:1px solid #eee;flex-shrink:0;';
+  const subjLabel = document.createElement('div');
+  subjLabel.style.cssText = 'font-size:12px;color:#7A96B2;margin-bottom:4px;';
+  subjLabel.textContent = 'Subject';
+  const subjText = document.createElement('div');
+  subjText.style.cssText = 'font-size:14px;font-weight:500;color:#0D1E35;';
+  subjText.textContent = subject;
+  subjRow.appendChild(subjLabel);
+  subjRow.appendChild(subjText);
+
+  // Body preview
+  const bodyWrap = document.createElement('div');
+  bodyWrap.style.cssText = 'padding:14px 20px;overflow-y:auto;flex:1;';
+  const bodyLabel = document.createElement('div');
+  bodyLabel.style.cssText = 'font-size:12px;color:#7A96B2;margin-bottom:8px;';
+  bodyLabel.textContent = 'Email body preview';
+  const pre = document.createElement('pre');
+  pre.id = 'email-body-text';
+  pre.style.cssText = 'font-family:\'DM Sans\',sans-serif;font-size:12px;color:#1A2018;white-space:pre-wrap;word-break:break-word;line-height:1.6;background:#F4F6F2;border-radius:8px;padding:14px;margin:0;';
+  pre.textContent = body;
+  bodyWrap.appendChild(bodyLabel);
+  bodyWrap.appendChild(pre);
+
+  // Buttons row
+  const btnRow = document.createElement('div');
+  btnRow.style.cssText = 'padding:14px 20px 24px;display:flex;gap:10px;flex-shrink:0;border-top:1px solid #eee;';
+
+  const copyBtn = document.createElement('button');
+  copyBtn.style.cssText = 'flex:1;padding:14px;border-radius:10px;border:1px solid #D6E0EC;background:#F0F4F8;font-family:\'DM Sans\',sans-serif;font-size:14px;font-weight:500;color:#0D1E35;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;';
+  copyBtn.textContent = 'Copy body';
+  copyBtn.addEventListener('click', function() {
+    const text = pre.textContent;
+    copyText(text, 'Email body copied — paste into your mail app!');
+  });
+
+  const mailBtn = document.createElement('button');
+  mailBtn.style.cssText = 'flex:1;padding:14px;border-radius:10px;border:none;background:#1A5EA8;font-family:\'DM Sans\',sans-serif;font-size:14px;font-weight:500;color:#fff;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;gap:6px;';
+  mailBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg> Gmail';
+  mailBtn.addEventListener('click', function() {
+    const url = 'https://mail.google.com/mail/?view=cm'
+      + '&to=' + encodeURIComponent(to)
+      + (cc ? '&cc=' + encodeURIComponent(cc) : '')
+      + '&su=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+    window.open(url, '_blank');
+  });
+
+  const outlookBtn = document.createElement('button');
+  outlookBtn.style.cssText = 'flex:1;padding:14px;border-radius:10px;border:none;background:#0078D4;font-family:\'DM Sans\',sans-serif;font-size:14px;font-weight:500;color:#fff;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;gap:6px;';
+  outlookBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg> Outlook';
+  outlookBtn.addEventListener('click', function() {
+    const url = 'https://outlook.office.com/mail/deeplink/compose'
+      + '?to=' + encodeURIComponent(to)
+      + (cc ? '&cc=' + encodeURIComponent(cc) : '')
+      + '&subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+    window.open(url, '_blank');
+  });
+
+  btnRow.appendChild(copyBtn);
+  btnRow.appendChild(mailBtn);
+  btnRow.appendChild(outlookBtn);
+
+  sheet.appendChild(header);
+  sheet.appendChild(subjRow);
+  sheet.appendChild(bodyWrap);
+  sheet.appendChild(btnRow);
+  overlay.appendChild(sheet);
+  document.body.appendChild(overlay);
+}
+
+function copyEmailBody() {
+  const el = document.getElementById('email-body-text');
+  const text = el ? el.innerText : '';
+  copyText(text, 'Email body copied — paste into your mail app!');
+}
+
+function clearForm() {
+  if (!confirm('Clear all form data?')) return;
+  document.querySelectorAll('input:not([type=button]):not([type=hidden]), select, textarea').forEach(el => {
+    if (el.id === 'f-cc') el.value = 'info@advaitgroup.co.in';
+    else el.value = '';
+  });
+  document.getElementById('f-role').value = '';
+  const aetl = document.getElementById('btn-aetl');
+  const agpl = document.getElementById('btn-agpl');
+  [aetl, agpl].forEach(b => { b.style.background='var(--bg)'; b.style.borderColor='var(--border)'; b.style.color='var(--text)'; });
+  populateSelect('f-bu', [], 'Select business unit');
+  populateSelect('f-dept', [], 'Select department');
+  populateSelect('f-subdept', [], 'Select sub department');
+  populateSelect('f-poslocation', [], 'Select location');
+  allGroups.forEach(g => {
+    ratings[g] = 0;
+    document.querySelectorAll(`#stars-${g} .star`).forEach(s => s.classList.remove('on'));
+    const rl = document.getElementById('rl-' + g);
+    if (rl) rl.textContent = '';
+  });
+
+  document.querySelectorAll('.rec-card').forEach(c => c.className = 'rec-card');
+  document.getElementById('score-banner').style.display = 'none';
+  recommendation = '';
+  window.history.replaceState(null, '', window.location.pathname);
+  showToast('Form cleared.');
+}
+
+// Init from URL
+(function init() {
+  loadSheetUrl();
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get('d');
+  if (raw) {
+    try {
+      const d = JSON.parse(decodeURIComponent(escape(atob(raw))));
+      loadData(d);
+    } catch(e) { console.warn('Could not load URL data', e); }
+  }
+})();
+</script>
+</body>
+</html>
